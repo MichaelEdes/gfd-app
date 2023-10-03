@@ -43,12 +43,12 @@
 </template>
 
 <script>
-import BurgerIcon from './icons/BurgerIcon.vue';
+import BurgerIcon from '../icons/BurgerIcon.vue';
 import NavDetailsBar from './NavSubBar.vue';
 import SideBar from './SideBar.vue';
-import Logo from './Logo.vue';
-import Button from './Button.vue';
-import TrustPilotIcon from './icons/TrustPilotIcon.vue';
+import Logo from '../icons/Logo.vue';
+import Button from '../Button.vue';
+import TrustPilotIcon from '../icons/TrustPilotIcon.vue';
 import NavDropdownSection from './NavDropdownSection.vue';
 
 export default {
@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../sass/app.scss';
+@import '../../../sass/app.scss';
 
 .mobile-nav-sideBar {
     display: flex;

@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import Logo from './Logo.vue';
+import Logo from '../icons/Logo.vue';
 
 export default {
     name: 'SideBar',
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../sass/app.scss';
+@import '../../../sass/app.scss';
 
 .menu {
     position: absolute;

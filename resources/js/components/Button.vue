@@ -38,7 +38,7 @@ button {
     }
 
     &.secondary {
-        background-color: $secondary;  
+        background-color: $black;  
     }
 }
 </style>

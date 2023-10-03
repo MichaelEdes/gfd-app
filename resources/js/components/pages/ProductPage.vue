@@ -2,16 +2,20 @@
 <div class="nav-container">
     <header-component :menuOpen="menuOpen" @toggleMenu="menuOpen = !menuOpen" />
 </div>
+<main>
+    <page-hero />
+</main>
 </template>
 
 <script>
-import HeaderComponent from './NavBar.vue';
-
+import HeaderComponent from '../navbar/NavBar.vue';
+import PageHero from '../PageHero.vue';
 export default {
     components: {
-        HeaderComponent
+        HeaderComponent,
+        PageHero,
     },
-    name: "nav-bar",
+    name: "product-page",
     data() {
         return {
             menuOpen: false,
@@ -33,4 +37,12 @@ export default {
 .nav-container {
     font-family: 'Inter', sans-serif;
 }
+
+main {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4rem clamp(5rem, 10vw, 15rem);
+    font-family: 'Red Hat Display', sans-serif;
+}
+
 </style>

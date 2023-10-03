@@ -39,7 +39,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../sass/app.scss';
+@import '../../../sass/app.scss';
+
 div{
     border-bottom: 1px solid $gray;
 

@@ -1,21 +1,20 @@
 import "./bootstrap";
 import { createApp } from "vue";
-import Header from "./components/Header.vue";
-
-// FontAwesome imports
+import ProductPage from "./components/pages/ProductPage.vue";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
     faShoppingBasket,
+    faCheck
 } from "@fortawesome/free-solid-svg-icons";
+import PageHero from "./components/PageHero.vue";
 
-// Add icons to the library
-library.add( faShoppingBasket); // Add faShoppingBasket if you want to use it
+library.add( faShoppingBasket, faCheck );
 
 const app = createApp({});
 
-// Register components
-app.component("header-component", Header);
-app.component("font-awesome-icon", FontAwesomeIcon); // Register FontAwesome icon component
+app.component("product-page", ProductPage);
+app.component("page-hero", PageHero);
+app.component("font-awesome-icon", FontAwesomeIcon);
 
 app.mount("#app");
