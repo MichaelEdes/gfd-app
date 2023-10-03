@@ -96,14 +96,15 @@ export default {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2em;
-    margin-bottom: 3em;
-    
+    margin: 3em 0;
+
     @media (min-width: 768px) and (max-width: 1024px) {
-       grid-template-columns: repeat(2, 1fr);
-        
-       div:last-of-type {
-        grid-column: 1 / -1;;
-       }
+        grid-template-columns: repeat(2, 1fr);
+
+        div:last-of-type {
+            grid-column: 1 / -1;
+            ;
+        }
     }
 
     @media (min-width: 1024px) {
@@ -132,20 +133,28 @@ export default {
 
         h1 {
             margin: unset;
+            font-size: clamp(2em, 5vw, 3em);
         }
-        
+
         #adImage {
             display: flex;
-        img {
-            width: 70%;
-            margin: 0 auto;
-            max-height: 40vh;
-            object-fit: cover;
+
+            img {
+                width: 70%;
+                margin: 0 auto;
+                max-height: 40vh;
+                object-fit: cover;
+            }
         }
-    }
+
         ul {
             width: fit-content;
             padding: unset;
+
+            li{
+                font-size: clamp(1em, 2vw, 1.2em);
+                margin: 0.5em 0;
+            }
         }
     }
 
@@ -159,32 +168,28 @@ export default {
             margin: unset;
         }
 
-        #brand {
-            font-size: 3em;
-            margin: unset;
-            font-weight: 700;
-        }
 
         p {
             font-weight: 300;
-            margin: 0.4em 0;
-            font-size: large;
-            span {
+            font-size: clamp(1rem, 3vh, 3rem);
+            margin: unset;
+            margin: 0.5em;
+            &:nth-of-type(2){
                 font-weight: 700;
-                font-size: small;
+                font-size: clamp(1rem, 2.5vh, 2rem);
+                margin: 0.5em 0 0.2em 0;
             }
         }
 
         .product-choices {
             display: flex;
-                margin-bottom: 0.5em;
-
+            
             button {
                 padding: 1em 1em;
                 width: 50%;
             }
         }
-        
+
         button {
             border: none;
             padding: 1em 2em;
@@ -201,11 +206,19 @@ export default {
 
         #brand {
             color: $dark;
-            font-size: 3rem;
+            font-size: clamp(3rem, 8vw, 6rem);
             margin: unset;
             line-height: 0.5em;
         }
 
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+        }
+
+        sub {
+            font-size: clamp(1.3rem, 1vw, 2rem);
+            font-weight: lighter;
+        }
         #saving {
             margin: 0.1em;
         }
@@ -220,7 +233,7 @@ export default {
         }
 
         .product-cta {
-            margin: 1em 0;
+            margin: 2em 0;
         }
     }
 }
