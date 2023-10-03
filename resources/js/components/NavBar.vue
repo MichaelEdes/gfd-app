@@ -2,62 +2,43 @@
 <header>
     <div class="mobile-nav-sideBar">
         <div>
-            <h1>gfd<span>trading</span></h1>
+            <logo />
         </div>
-        <BurgerIcon @toggleMenu="toggleMenu"/>
-        <div class="menu">
-            <ul>
-                <li>
-                    <ul>Entrance Doors</ul>
-                </li>
-                <li>
-                    <ul>Fully Glazed</ul>
-                </li>
-                <li>
-                    <ul>Bi-Fold Doors</ul>
-                </li>
-                <li>
-                    <ul>Sliding Doors</ul>
-                </li>
-                <li>
-                    <ul>French Doors</ul>
-                </li>
-                <li>
-                    <ul>Roof Lanters/Lights</ul>
-                </li>
-                <li>
-                    <ul>Windows</ul>
-                </li>
-                <li>
-                    <ul>Outdoors</ul>
-                </li>
-                <li>
-                    <ul>Be Inspired</ul>
-                </li>
-            </ul>
-        </div>
+        <BurgerIcon @toggleMenu="toggleMenu" />
+        <side-bar :menu-open="menuOpen" />
+        <div class="overlay" :style="{ opacity: menuOpen ? '0.7' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }" @click="toggleMenu" />
     </div>
-    <div class="desktop-nav">desktop</div>
-    <nav-details-bar />
+    <div class="desktop-nav">
+       <Logo/>
+    </div>
+    <nav-details-bar style="display: none;" />
 </header>
 </template>
 
 <script>
 import BurgerIcon from './BurgerIcon.vue';
 import NavDetailsBar from './NavSubBar.vue';
+import SideBar from './SideBar.vue';
+import Logo from './Logo.vue';
 
 export default {
     name: 'Header',
     components: {
-        BurgerIcon,
-        NavDetailsBar
-    },
+    BurgerIcon,
+    NavDetailsBar,
+    SideBar,
+    Logo,
+    Logo
+},
     methods: {
         toggleMenu(isOpen) {
             this.$emit('toggleMenu', isOpen);
+        },
+        closeMenu() {
+            this.$emit('toggleMenu', false);
         }
     },
-        props: {
+    props: {
         menuOpen: {
             type: Boolean,
             required: true
@@ -82,33 +63,23 @@ export default {
     justify-content: space-between;
     height: 5em;
     padding: 0 1em;
+    max-width: 100vw;
+    overflow: hidden;
 
-    h1 {
-        padding: unset;
-        margin: unset;
-        font-weight: bold;
-        font-size: 3em;
-
-        span {
-            font-weight: 100;
-        }
-    }
-
-    .menu {
+    .overlay {
         position: absolute;
-        left: -100vw;
+        right: 0;
         top: 0;
-
-        ul {
-            list-style: none;
-            margin: unset;
-            padding-left: 1em;
-
-            li {
-                margin: unset;
-                padding: unset;
-            }
-        }
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        opacity: 0; // Start off invisible
+        transition: opacity 0.3s ease-in-out; // 0.3s can be adjusted to your preference
+        touch-action: none;
     }
 }
 

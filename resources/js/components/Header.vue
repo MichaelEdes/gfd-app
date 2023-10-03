@@ -1,5 +1,7 @@
 <template>
-<header-component :menuOpen="menuOpen" @toggleMenu="menuOpen = !menuOpen" />
+<div class="nav-container">
+    <header-component :menuOpen="menuOpen" @toggleMenu="menuOpen = !menuOpen" />
+</div>
 </template>
 
 <script>
@@ -27,6 +29,5 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
 </style>
