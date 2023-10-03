@@ -61,7 +61,7 @@ ul{
         margin: unset;
         padding: unset;
         cursor: pointer;
-        font-size: smaller;
+        font-size: medium;
 
         ul {
             &::after {
@@ -71,6 +71,10 @@ ul{
                 margin-left: 0.5em;
                 color: $primary;
             }
+        }
+
+        &:hover {
+            color: $primary;
         }
     }
 }

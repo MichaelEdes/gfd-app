@@ -51,7 +51,7 @@ export default {
 }
 
 main {
-    width: 100%;
+    width: calc(100% - 4em);
     max-width: 1600px;
     margin: 0 auto;
     padding: 2em;

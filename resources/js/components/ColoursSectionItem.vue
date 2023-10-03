@@ -28,7 +28,7 @@ export default {
 div {
     @import '../../sass/app.scss';
 
-    height: 10em;
+    height: 11em;
     aspect-ratio: 1;
     position: relative;
     display: flex;
@@ -38,7 +38,7 @@ div {
 
     span { 
         display: block;
-        background-color: $black;
+        background-color: $dark;
         height: 100%;
         width: 1px;
 

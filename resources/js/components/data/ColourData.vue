@@ -48,7 +48,7 @@ export default {
                     hex: '#C3E0E5'
                 },
                 {
-                    name: 'Off-White',
+                    name: 'White',
                     hex: '#F8F8F8'
                 },
                 {
@@ -57,7 +57,7 @@ export default {
                 },
                 {
                     name: 'Blue',
-                    hex: '#0000FF'
+                    hex: '#09498E'
                 },
                 {
                     name: 'Moss Green',

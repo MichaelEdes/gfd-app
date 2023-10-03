@@ -111,8 +111,8 @@ export default {
         justify-content: center;
         align-items: center;
         z-index: 1;
-        opacity: 0; // Start off invisible
-        transition: opacity 0.3s ease-in-out; // 0.3s can be adjusted to your preference
+        opacity: 0; 
+        transition: opacity 0.3s ease-in-out;
         touch-action: none;
     }
 
@@ -161,6 +161,10 @@ export default {
         a {
             text-decoration: none;
             color: inherit;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 

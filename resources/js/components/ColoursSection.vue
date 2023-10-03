@@ -12,21 +12,20 @@
 </div>
 </template>
 
-
 <script>
 import ColoursSectionItem from './ColoursSectionItem.vue';
-import ColoursData from './data/ColourData.vue'; 
+import ColoursData from './data/ColourData.vue';
 
 export default {
-  name: "ColourSectionList",
-  components: {
-    ColoursSectionItem
-  },
-  data() {
-    return {
-      colors: ColoursData.data().colors
-    };
-  }
+    name: "ColourSectionList",
+    components: {
+        ColoursSectionItem
+    },
+    data() {
+        return {
+            colors: ColoursData.data().colors
+        };
+    }
 }
 </script>
 
@@ -37,18 +36,23 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    width: 100%;
+    width: calc(100% - 1em);
+    margin: 0 auto;
     background-color: $lightGray;
-    padding: 0.5em 1em 1em 1em;
+    padding: 1em 1em 3em 1em;
     box-sizing: border-box;
     margin-bottom: 3em;
+
     .section-header {
         display: flex;
         align-items: center;
         margin: unset;
-        font-size: clamp(0.2em, 0.7em, 0.6em);
         justify-content: space-between;
         line-height: 0;
+
+        h1 {
+            font-size: clamp(0.8em, 2vw, 1.5rem);
+        }
 
         h1:nth-of-type(2) {
             font-weight: lighter;
@@ -62,16 +66,16 @@ export default {
     .section-content {
         display: flex;
         align-items: center;
-        justify-content: center; 
+        justify-content: center;
         flex-grow: 1;
 
         div {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            gap: 1em;
+            gap: 2em;
             width: fit-content;
-            align-items: center; 
+            align-items: center;
             justify-content: center;
         }
     }
