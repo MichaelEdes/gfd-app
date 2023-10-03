@@ -9,27 +9,55 @@
         <div class="overlay" :style="{ opacity: menuOpen ? '0.7' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }" @click="toggleMenu" />
     </div>
     <div class="desktop-nav">
-       <Logo/>
+        <div class="logo">
+            <logo />
+        </div>
+        <div class="nav-tagline">
+            <h4>SECURING HOMES SINCE 2008</h4>
+        </div>
+        <div class="nav-details">
+            <h4>01642 309 576</h4>
+            <p>(OPEN TODAY 9AM-5PM)</p>
+        </div>
+        <div class="nav-options">
+            <ul>
+                <li><a href="#">In The Trade?</a></li>
+                <li><a id="trust-pilot" href="#">
+                        <trust-pilot-icon /> Trust Pilot</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Brochures</a></li>
+            </ul>
+            <div>
+                <h1>
+                    <font-awesome-icon :icon="['fas', 'basket-shopping']" />
+                </h1>
+                <Button text="Submit" variant="primary" />
+            </div>
+        </div>
     </div>
-    <nav-details-bar style="display: none;" />
+    <nav-details-bar />
 </header>
 </template>
 
 <script>
-import BurgerIcon from './BurgerIcon.vue';
+import BurgerIcon from './icons/BurgerIcon.vue';
 import NavDetailsBar from './NavSubBar.vue';
 import SideBar from './SideBar.vue';
 import Logo from './Logo.vue';
+import Button from './Button.vue';
+import TrustPilotIcon from './icons/TrustPilotIcon.vue';
 
 export default {
     name: 'Header',
     components: {
-    BurgerIcon,
-    NavDetailsBar,
-    SideBar,
-    Logo,
-    Logo
-},
+        BurgerIcon,
+        NavDetailsBar,
+        SideBar,
+        Logo,
+        Button,
+        TrustPilotIcon
+    },
     methods: {
         toggleMenu(isOpen) {
             this.$emit('toggleMenu', isOpen);
@@ -57,6 +85,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../sass/app.scss';
+
 .mobile-nav-sideBar {
     display: flex;
     align-items: center;
@@ -81,9 +111,96 @@ export default {
         transition: opacity 0.3s ease-in-out; // 0.3s can be adjusted to your preference
         touch-action: none;
     }
+
+    @media (min-width: 1067px) {
+        display: none;
+    }
 }
 
 .desktop-nav {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+    height: 5em;
+    border-bottom: 1px solid $gray;
+
+    .logo {
+        width: 250px;
+        border-right: 1px solid $gray;
+        display: flex;
+        height: 5em;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1em 0 0;
+    }
+
+    .nav-tagline {
+        margin: 0 auto 0 1em;
+
+        @media (max-width: 1500px) {
+            display: none;
+        }
+    }
+
+    h4,
+    p {
+        margin: unset;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 1em;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .nav-options {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2em;
+        margin: 0 0 0 auto;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1em;
+        }
+
+        #trust-pilot {
+            display: flex;
+            align-items: center;
+            gap: 0.1em;
+        }
+    }
+
+    .nav-details {
+        text-align: center;
+        margin-left: auto;
+
+        h4 {
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: smaller;
+        }
+
+        @media (max-width: 1260px) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1067px) {
+        display: none;
+    }
 }
 </style>

@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../sass/app.scss';
+@import '../../../sass/app.scss';
 
 * {
     margin: 0;

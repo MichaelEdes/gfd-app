@@ -18,6 +18,7 @@ export default {
 @import '../../sass/app.scss';
 
 div {
+    display: none;
     background-color: $dark;
     color: $white;
     width: 100%;
@@ -39,6 +40,10 @@ div {
         span {
             color: $primary
         }
+    }
+
+    @media (min-width: 1261px) {
+        display: none;
     }
 }
 </style>
