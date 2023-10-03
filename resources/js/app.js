@@ -5,11 +5,24 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
     faShoppingBasket,
-    faCheck
+    faCheck,
+    faClipboard,
+    faHardHat,
+    faRuler,
+    faTree,
+    faDoorOpen
 } from "@fortawesome/free-solid-svg-icons";
 import PageHero from "./components/PageHero.vue";
 
-library.add( faShoppingBasket, faCheck );
+library.add(
+    faShoppingBasket,
+    faCheck,
+    faClipboard,
+    faHardHat,
+    faRuler,
+    faTree,
+    faDoorOpen,
+);
 
 const app = createApp({});
 

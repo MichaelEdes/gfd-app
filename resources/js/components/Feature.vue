@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="icon">
-        <component :is="iconComponent" />
+        <font-awesome-icon :icon="['fas', iconName]" />
     </div>
     <p>{{ label }}</p>
 </div>
@@ -11,8 +11,8 @@
 export default {
     name: "Feature",
     props: {
-        iconComponent: {
-            type: Object,
+        iconName: {
+            type: String,
             required: true
         },
         label: {
@@ -21,7 +21,6 @@ export default {
         }
     }
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -33,20 +32,21 @@ div {
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: fit-content;
+    width: 7em;
+
     .icon {
         border: 1px solid $dark;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0.5;
-        width: 4em;
+        width: 3em;
         aspect-ratio: 1;
         border-radius: 50%;
+        transform: scale(1.4);
     }
-    
+
     p {
-        margin: unset;
+        margin: 1em 0;
     }
 }
 </style>
