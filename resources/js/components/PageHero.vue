@@ -5,7 +5,7 @@
     </div>
     <div class="product-details">
         <h1>Introducing</h1>
-        <div>
+        <div id="adImage">
             <img src="../../images/compDoorAd.png" />
         </div>
         <ul>
@@ -78,7 +78,7 @@ export default {
             } else if (this.selectedOption === 'fullyFitted') {
                 return "Fully Fitted, 10 Year Product Guarantee, 5 Year Fitting Guarantee";
             }
-            return ""; 
+            return "";
         }
     },
     methods: {
@@ -94,117 +94,249 @@ export default {
 
 .page-hero-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-template-rows: 1fr;
-    justify-content: center;
-    max-height: 0vh;
-    text-align: center;
-    padding: 1em;
-    column-gap: 1em;
+    grid-template-columns: 1fr;
+    gap: 2em;
 
-    h1 {
-        margin: unset;
-        padding: unset;
+    @media (min-width: 768px) and (max-width: 1024px) {
+       grid-template-columns: repeat(2, 1fr);
+        
+       div:last-of-type {
+        grid-column: 1 / -1;;
+       }
     }
 
-    .product-image,
-    div>div {
-        display: flex;
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr 2fr;
         align-items: center;
-        justify-content: center;
-        overflow: hidden;
+    }
+
+    .product-image {
+        display: flex;
 
         img {
-            max-width: 100%;
-            max-height: 100%;
+            width: auto;
+            margin: 0 auto;
+            max-height: 40vh;
             object-fit: cover;
         }
     }
 
     .product-details {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
 
-        ul{
-            padding: 1em 3em;
-
-            li{
-                font-size: large;
-                font-weight: lighter;
-                text-align: start;
-            }
+        h1 {
+            margin: unset;
+        }
+        
+        #adImage {
+            display: flex;
+        img {
+            width: 70%;
+            margin: 0 auto;
+            max-height: 40vh;
+            object-fit: cover;
         }
     }
-    .product-choices {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: -1em 0;
-
-        button {
-            border: none;
-            padding: 1em 2em;
-            transition: all 0.3s;
-            cursor: pointer;
-            ;
-
-            &.active {
-                color: $white;
-                background-color: $primary;
-            }
+        ul {
+            width: fit-content;
+            padding: unset;
         }
     }
 
     .product-price-details {
         display: flex;
         flex-direction: column;
-        gap: 1em;
+        width: 100%;
+        text-align: center;
 
-        p {
-            font-size: 2em;
-            font-weight: 200;
-            margin: unset;
-
-            span {
-                font-size: 0.8em;
-                font-weight: bold;
-            }
-        }
-        sub {
-            font-size: large;
-            font-weight: lighter;
-            margin: 0.5em 0 1em 0;
-        }
         h2 {
+            margin: unset;
+        }
+
+        #brand {
             font-size: 3em;
             margin: unset;
+            font-weight: 700;
         }
 
-        button {
+        p {
+            font-weight: 300;
+            margin: 0.4em 0;
             font-size: large;
+            span {
+                font-weight: 700;
+                font-size: small;
+            }
+        }
+
+        .product-choices {
+            display: flex;
+                margin-bottom: 0.5em;
+
+            button {
+                padding: 1em 1em;
+                width: 50%;
+            }
+        }
+        
+        button {
+            border: none;
+            padding: 1em 2em;
+            transition: all 0.3s;
+            cursor: pointer;
             margin: 0.5em 0;
+
+            &.active {
+                color: $white;
+                background-color: $primary;
+            }
+
         }
 
         #brand {
             color: $dark;
-            font-size: 5rem;
+            font-size: 3rem;
             margin: unset;
             line-height: 0.5em;
         }
 
         #saving {
-            margin: -0.5em 0;
+            margin: 0.1em;
         }
+
         #old-price {
-            color: $wine
+            color: $wine;
+            margin: 0.1em;
         }
 
         #new-price {
-            color: $primary
+            color: $primary;
         }
 
         .product-cta {
-            display: flex;
-            flex-direction: column;
+            margin: 1em 0;
         }
     }
 }
+
+// .page-hero-container {
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     grid-template-rows: 0fr 1fr 1fr;
+//     justify-content: center;
+//     max-height: 0vh;
+//     text-align: center;
+//     padding: 1em;
+//     column-gap: 1em;
+
+//     h1 {
+//         margin: unset;
+//         padding: unset;
+//     }
+
+//     .product-image,
+//     div>div {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         overflow: hidden;
+
+//         img {
+//             max-width: 100%;
+//             max-height: 100%;
+//             object-fit: cover;
+//         }
+//     }
+
+//     .product-details {
+
+//         ul{
+//             padding: 1em 3em;
+
+//             li{
+//                 font-size: large;
+//                 font-weight: lighter;
+//                 text-align: start;
+//             }
+//         }
+//     }
+// .product-choices {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin: -1em 0;
+
+//     button {
+//         border: none;
+//         padding: 1em 2em;
+//         transition: all 0.3s;
+//         cursor: pointer;
+//         ;
+
+//         &.active {
+//             color: $white;
+//             background-color: $primary;
+//         }
+//     }
+// }
+
+//     .product-price-details {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 1em;
+
+//         p {
+//             font-size: 2em;
+//             font-weight: 200;
+//             margin: unset;
+
+//             span {
+//                 font-size: 0.8em;
+//                 font-weight: bold;
+//             }
+//         }
+//         sub {
+//             font-size: large;
+//             font-weight: lighter;
+//             margin: 0.5em 0 1em 0;
+//         }
+//         h2 {
+//             font-size: 3em;
+//             margin: unset;
+//         }
+
+//         button {
+//             font-size: large;
+//             margin: 0.5em 0;
+//         }
+
+// #brand {
+//     color: $dark;
+//     font-size: 5rem;
+//     margin: unset;
+//     line-height: 0.5em;
+// }
+
+// #saving {
+//     margin: -0.5em 0;
+// }
+// #old-price {
+//     color: $wine
+// }
+
+// #new-price {
+//     color: $primary
+// }
+
+//         .product-cta {
+//             display: flex;
+//             flex-direction: column;
+//         }
+//     }
+// }
 </style>
