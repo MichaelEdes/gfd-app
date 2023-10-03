@@ -23,7 +23,8 @@
             <ul>
                 <li><a href="#">In The Trade?</a></li>
                 <li><a id="trust-pilot" href="#">
-                        <trust-pilot-icon /> Trust Pilot</a></li>
+                        <span>
+                            <trust-pilot-icon /></span> Trust Pilot</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Reviews</a></li>
                 <li><a href="#">Brochures</a></li>
@@ -36,6 +37,7 @@
             </div>
         </div>
     </div>
+    <nav-dropdown-section/>
     <nav-details-bar />
 </header>
 </template>
@@ -47,6 +49,7 @@ import SideBar from './SideBar.vue';
 import Logo from './Logo.vue';
 import Button from './Button.vue';
 import TrustPilotIcon from './icons/TrustPilotIcon.vue';
+import NavDropdownSection from './NavDropdownSection.vue';
 
 export default {
     name: 'Header',
@@ -56,7 +59,8 @@ export default {
         SideBar,
         Logo,
         Button,
-        TrustPilotIcon
+        TrustPilotIcon,
+        NavDropdownSection
     },
     methods: {
         toggleMenu(isOpen) {
@@ -178,20 +182,27 @@ export default {
             display: flex;
             align-items: center;
             gap: 0.1em;
+
+            span {
+                margin-bottom: 0.3em;
+            }
         }
     }
 
     .nav-details {
         text-align: center;
         margin-left: auto;
-
+        padding-inline-start: 2em;
+        
         h4 {
-            letter-spacing: 0.2em;
+            letter-spacing: clamp(0.1vw, 0.2vw, 1em);
+            font-size: clamp(1vw, 1.5vw, 2.5em);
             font-weight: 700;
         }
 
         p {
-            font-size: smaller;
+            font-size: clamp(1em, 0.5vw, 2.5em);
+            font-weight: lighter;
         }
 
         @media (max-width: 1260px) {
