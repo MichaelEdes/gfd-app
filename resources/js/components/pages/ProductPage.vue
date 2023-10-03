@@ -4,16 +4,23 @@
 </div>
 <main>
     <page-hero />
+    <colours-section />
+    <features-section />
 </main>
 </template>
 
 <script>
 import HeaderComponent from '../navbar/NavBar.vue';
 import PageHero from '../PageHero.vue';
+import ColoursSection from '../ColoursSection.vue';
+import FeaturesSection from '../FeaturesSection.vue';
+
 export default {
     components: {
         HeaderComponent,
         PageHero,
+        ColoursSection,
+        FeaturesSection
     },
     name: "product-page",
     data() {
@@ -40,8 +47,10 @@ export default {
 
 main {
     width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 2em;
     box-sizing: border-box;
-    padding: 4rem clamp(5rem, 10vw, 15rem);
     font-family: 'Red Hat Display', sans-serif;
 }
 

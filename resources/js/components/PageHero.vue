@@ -96,7 +96,8 @@ export default {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2em;
-
+    margin-bottom: 3em;
+    
     @media (min-width: 768px) and (max-width: 1024px) {
        grid-template-columns: repeat(2, 1fr);
         
@@ -223,120 +224,4 @@ export default {
         }
     }
 }
-
-// .page-hero-container {
-//     display: grid;
-//     grid-template-columns: 1fr;
-//     grid-template-rows: 0fr 1fr 1fr;
-//     justify-content: center;
-//     max-height: 0vh;
-//     text-align: center;
-//     padding: 1em;
-//     column-gap: 1em;
-
-//     h1 {
-//         margin: unset;
-//         padding: unset;
-//     }
-
-//     .product-image,
-//     div>div {
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         overflow: hidden;
-
-//         img {
-//             max-width: 100%;
-//             max-height: 100%;
-//             object-fit: cover;
-//         }
-//     }
-
-//     .product-details {
-
-//         ul{
-//             padding: 1em 3em;
-
-//             li{
-//                 font-size: large;
-//                 font-weight: lighter;
-//                 text-align: start;
-//             }
-//         }
-//     }
-// .product-choices {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin: -1em 0;
-
-//     button {
-//         border: none;
-//         padding: 1em 2em;
-//         transition: all 0.3s;
-//         cursor: pointer;
-//         ;
-
-//         &.active {
-//             color: $white;
-//             background-color: $primary;
-//         }
-//     }
-// }
-
-//     .product-price-details {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 1em;
-
-//         p {
-//             font-size: 2em;
-//             font-weight: 200;
-//             margin: unset;
-
-//             span {
-//                 font-size: 0.8em;
-//                 font-weight: bold;
-//             }
-//         }
-//         sub {
-//             font-size: large;
-//             font-weight: lighter;
-//             margin: 0.5em 0 1em 0;
-//         }
-//         h2 {
-//             font-size: 3em;
-//             margin: unset;
-//         }
-
-//         button {
-//             font-size: large;
-//             margin: 0.5em 0;
-//         }
-
-// #brand {
-//     color: $dark;
-//     font-size: 5rem;
-//     margin: unset;
-//     line-height: 0.5em;
-// }
-
-// #saving {
-//     margin: -0.5em 0;
-// }
-// #old-price {
-//     color: $wine
-// }
-
-// #new-price {
-//     color: $primary
-// }
-
-//         .product-cta {
-//             display: flex;
-//             flex-direction: column;
-//         }
-//     }
-// }
 </style>
