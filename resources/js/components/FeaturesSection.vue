@@ -46,7 +46,7 @@ export default {
 
 <style lang="scss" scoped>
 .features-container {
-    margin: 3em 0;
+    margin: 3em 0 1m 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

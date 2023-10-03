@@ -97,7 +97,7 @@ export default {
     background-color: $lightGray;
     padding: 0.5em 1em 1em 1em;
     box-sizing: border-box;
-
+    margin-bottom: 3em;
     .section-header {
         display: flex;
         align-items: center;
