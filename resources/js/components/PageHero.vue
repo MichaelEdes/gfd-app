@@ -187,6 +187,7 @@ export default {
             button {
                 padding: 1em 1em;
                 width: 50%;
+                font-size: larger;
             }
         }
 
@@ -233,7 +234,10 @@ export default {
         }
 
         .product-cta {
-            margin: 2em 0;
+            margin: 2em 0 0 0;
+            button {
+                font-size: large;
+            }
         }
     }
 }
