@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "jsx": "preserve",
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true
+    },
+    "include": ["resources/js/**/*"],
+    "exclude": ["node_modules"]
+  }
